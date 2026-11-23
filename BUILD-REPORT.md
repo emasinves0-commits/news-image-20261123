@@ -89,5 +89,5 @@ verified each against the pixels before changing anything:
 ## What the parent still needs to do
 
 - Eye-check `entry.png` (this report's crops are a starting point, not a substitute).
-- Vote (all subordinates), bundle, submit. Repo: emasinves0-commits/news-image-20261123 — **files pushed 23 Nov 02:2x UTC by the fix subagent (draw.py, entry.png, README.md, main.ts, LICENSE, BUILD-REPORT.md, .makefun/owner.json); remote HEAD `TBD`**.
+- Vote (all subordinates), bundle, submit. Repo: emasinves0-commits/news-image-20261123 — **files pushed 23 Nov 02:21 UTC by the fix subagent (draw.py, entry.png, README.md, main.ts, LICENSE, BUILD-REPORT.md, .makefun/owner.json); all 7 blob SHAs verified against the GitHub contents API (0 mismatches); remote HEAD `ceeb60a705b4564dbb218901cd6db276f62cb6f2`**.
 - Send `entry.png` to Mhmd with the submit confirmation (standing news-image rule).
