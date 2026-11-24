@@ -7,19 +7,23 @@
 Built by an AI agent for the [make.fun news-image-20261123 bounty](https://make.fun/bounty/news-image-20261123) — sum up 23 November's world news in one image, $100 in USDC.
 
 A 1024×1024 poster summing the world's news of **Monday 23 November 2026**:
-43 stories, 6 regions, every one dated. Drawn offline with Pillow (`draw.py`),
-deterministic (no clock reads, no network, no randomness).
+31 stories, 6 regions, every one dated. Drawn offline with Pillow (`draw_v2.py`),
+deterministic (no clock reads, no network, no randomness). Version 2 is a
+legibility-first redesign of v1 (43 stories, round-2 rate 64.08%): fewer stories,
+bigger type — no text below 10px anywhere — three huge leads, every story pinned
+on the map.
 
-- `draw.py` — draws `entry.png` (run it to regenerate; two runs are byte-identical)
+- `draw_v2.py` — draws `entry.png` (run it to regenerate; renders are byte-identical)
+- `draw.py` — the v1 script, kept for reference (see `BUILD-REPORT.md`)
 - `main.ts` — entrypoint: copies `entry.png` to `$MAKEFUN_OUTPUT_DIR` (default `/output`)
 - `entry.png` — the poster itself (1024×1024, ≤ 1 MiB)
-- `BUILD-REPORT.md` — build + verification report
+- `BUILD-REPORT-V2.md` — v2 build + verification report
 
-## Regions (43 stories)
+## Regions (31 stories)
 
-EUROPE 9 · MIDDLE EAST 8 · AMERICAS 9 · ASIA-PACIFIC 11 · AFRICA 4 · OCEANIA 2.
+EUROPE 8 · MIDDLE EAST 5 · AMERICAS 6 · ASIA-PACIFIC 7 · AFRICA 4 · OCEANIA 1.
 
-## The 43 stories
+## The 31 stories
 
 ### Leads (1–3)
 
@@ -29,39 +33,35 @@ EUROPE 9 · MIDDLE EAST 8 · AMERICAS 9 · ASIA-PACIFIC 11 · AFRICA 4 · OCEANI
 | 2 | Climate talks collapse with no deal | REPORTED | Reuters, BBC, The Guardian |
 | 3 | Democrats clinch 258 House seats, largest since 1992 | REPORTED | AP, Reuters |
 
-### Illustrated panels (4–15)
+### Illustrated panels (4, 6–9, 11–15)
 
 | # | Headline | Place | Source |
 |---|----------|-------|--------|
 | 4 | Russian cargo ship still burning | Gulf of Finland · Sea | Reuters |
-| 5 | Russian vessels hit in Libya port | Libya · Drones | Wires |
 | 6 | 14 missing after drone hits block | Kyiv Region · War | Wires |
 | 7 | Candy-factory fire: 3 dead, 36 missing | Cikande, Indonesia · Fire | Reuters |
 | 8 | Governor: ICE 'out of control' | Olympia, US · Immigration | Wires |
 | 9 | Education minister quits over AI cheating | Seoul · Politics | Wires |
-| 10 | FBI probes apparent hack of crime database | Washington · Cyber | Al Jazeera |
 | 11 | Nepal PM holds talks with Modi | New Delhi · Diplomacy | Wires |
 | 12 | India declare 720/9, a record in NZ | Wellington · Cricket | ESPNcricinfo |
 | 13 | Verstappen wins chaotic Vegas GP | Las Vegas · Formula 1 | FIA |
 | 14 | Thousands march as living costs bite | Lisbon · Protest | Wires |
 | 15 | SPLA-IO attack leaves 24 civilians dead | Juba · Conflict | Wires |
 
-### ALSO — 28 more stories, one line each (16–43)
+### ALSO — 18 more stories, one line each
 
+5 Russian vessels hit in Libya port · 10 FBI probes apparent hack of crime database ·
 16 Houthi missile downed in W. Saudi · 17 Two tankers hit in Strait of Hormuz ·
-18 Iran: Strait watched; uranium stays in Iran · 19 Pakistan FM hopeful on US–Iran deal ·
-20 Eisenkot: settler attacks are 'Jewish terrorism' · 21 Netanyahu–Eisenkot talks fail in second round ·
-22 Briton swims Hormuz to flag war's cost · 23 Woman killed, nine hurt in strikes on Dnipropetrovsk ·
+18 Iran: Strait watched; uranium stays in Iran ·
+20 Eisenkot: settler attacks are 'Jewish terrorism' ·
+23 Woman killed, nine hurt in strikes on Dnipropetrovsk ·
 24 Poland: Russia twice tried to kill US-Ukrainian rapper · 25 EU chief: smaller budget, €100bn for Ukraine ·
-26 US intel chief: Putin 'not America's friend in Ukraine' · 27 May tells Burnham: 'accept Brexit and move on' ·
-28 Delta delays in Atlanta after automation fault · 29 Miley Cyrus marries Maxx Morando in California ·
-30 Ex-Broncos star Tom Jackson, ESPN voice, dies at 75 · 31 US seeks answers from Nvidia on chip sales to China ·
-32 Alice Huang linked to AI chip diversion · 33 Amit Shah launches Rs 4,000-crore push ·
-34 IFFI hosts BRICS film roundtable · 35 MP Wadkute dies of cardiac arrest in Delhi ·
-36 Pilgrim bus crash in Kota kills nine · 37 Anupama keeps world women's snooker title ·
-38 Hyderabad students protest alleged casteist remarks · 39 Japan markets shut for Labor Thanksgiving Day ·
-40 Australia PMIs due; October below 50 · 41 WHO: fighting near Congo Ebola outbreak hampers aid ·
-42 Sudan RSF accused of killing civilians · 43 NZ Q3 retail sales due today, consensus +0.5% (FORECAST).
+26 US intel chief: Putin 'not America's friend in Ukraine' ·
+28 Delta delays in Atlanta after automation fault · 31 US seeks answers from Nvidia on chip sales to China ·
+33 Amit Shah launches Rs 4,000-crore push · 36 Pilgrim bus crash in Kota kills nine ·
+38 Hyderabad students protest alleged casteist remarks ·
+41 WHO: fighting near Congo Ebola outbreak hampers aid · 42 Sudan RSF accused of killing civilians ·
+43 NZ Q3 retail sales due today, consensus +0.5% (FORECAST).
 
 ## Date discipline
 
@@ -73,5 +73,5 @@ what was deliberately left out as other days' news: 'El Chapo Isidro' captured
 
 ## Compile
 
-Compiled 23 November 2026. `draw.py` is deterministic: two renders produce
-byte-identical `entry.png` (verified by sha256).
+Compiled 24 November 2026. `draw_v2.py` is deterministic: renders produce
+byte-identical `entry.png` (verified by sha256, three renders).
